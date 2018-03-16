@@ -9,6 +9,7 @@ public class Equipo {
 	private String pok1;
 	private String pok2;
 	private String pok3;
+	private int id;
 
 	
 
@@ -29,6 +30,14 @@ public class Equipo {
 
 	}
 
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -83,6 +92,12 @@ public class Equipo {
 
 	public void setPok3(String pok3) {
 		this.pok3 = pok3;
+	}
+
+	@Override
+	public String toString() {
+		return "Equipo [nombre=" + nombre + ", nombrequipo=" + nombrequipo + ", fecha=" + fecha + ", legendario="
+				+ legendario + ", pok1=" + pok1 + ", pok2=" + pok2 + ", pok3=" + pok3 + "]";
 	}
 	
 

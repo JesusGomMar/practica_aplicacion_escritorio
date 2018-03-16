@@ -41,7 +41,7 @@ public class EquipoDAOImpl implements EquipoDAO{
 		
 		PreparedStatement ps;
 		try {
-			ps = miConexion.prepareStatement(ConstantesSQL.sqlInsercionCliente);
+			ps = miConexion.prepareStatement(ConstantesSQL.sqlInsercionEquipo);
 			ps.setString(1, c.getNombre());
 			ps.setString(2, c.getNombrequipo());
 			ps.setString(3, c.getFecha());
@@ -64,6 +64,17 @@ public class EquipoDAOImpl implements EquipoDAO{
 	@Override
 	public void borrarEquipo(int id) {
 		// TODO Auto-generated method stub
+		try {
+			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.sqlBorradoEquipo);
+			System.out.println(id);
+			ps.setInt(1, id);
+			ps.execute();
+			ps.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("el sql de borrado esta mal");
+			System.out.println(e.getMessage());
+		}
 		
 	}
 
@@ -73,7 +84,7 @@ public class EquipoDAOImpl implements EquipoDAO{
 		
 		Equipo[] equipo = null;
 		try {
-			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.sqlSeleccionCliente);
+			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.sqlSeleccionEquipo);
 			
 			// para sql tipo select debo usar el metodo executequery
 			ResultSet resultado = ps.executeQuery();
@@ -88,6 +99,7 @@ public class EquipoDAOImpl implements EquipoDAO{
 				c.setNombrequipo(resultado.getString("nombre_equipo"));
 				c.setFecha(resultado.getString("fecha"));
 				c.setLegendario(resultado.getBoolean("legendario"));
+				c.setId(resultado.getInt("id"));
 //				c.setTelefono(resultado.getString("telefono"));
 				listEquipo.add(c);
 				
