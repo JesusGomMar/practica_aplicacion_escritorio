@@ -21,8 +21,9 @@ public class PanelRegistroEquipos extends JPanel implements ActionListener{
 	JTextField campoNombre = new JTextField(15);
 	JTextField campoNombreEquipo = new JTextField(15);
 	JTextField campoFecha = new JTextField(15);
-	JRadioButton yes = new JRadioButton("Yes");
-	JRadioButton no = new JRadioButton("No");
+	JRadioButton yesButton = new JRadioButton("Yes");
+	//yesButton.setSelected(true);
+	JRadioButton noButton = new JRadioButton("No");
 	JTextField campoPok1 = new JTextField(15);
 	JTextField campoPok2 = new JTextField(15);
 	JTextField campoPok3 = new JTextField(15);
@@ -34,10 +35,10 @@ public class PanelRegistroEquipos extends JPanel implements ActionListener{
 		//asi asigno un gestor de diseño q me permite
 		//colocar las cosas en forma de filas y celdas
 		
-		yes.setSelected(true);
+		yesButton.setSelected(true);
 		ButtonGroup group = new ButtonGroup();
-        group.add(yes);
-        group.add(no);
+        group.add(yesButton);
+        group.add(noButton);
 		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
@@ -81,10 +82,10 @@ public class PanelRegistroEquipos extends JPanel implements ActionListener{
 		this.add(new JLabel("Legendarios "), gbc);
 		gbc.gridy = 4;
 		gbc.gridx = 1;
-		this.add(yes, gbc);
+		this.add(yesButton, gbc);
 		gbc.gridy = 4;
 		gbc.gridx = 2;
-		this.add(no, gbc);
+		this.add(noButton, gbc);
 		
 		
 		//sexta fila
@@ -132,9 +133,9 @@ public class PanelRegistroEquipos extends JPanel implements ActionListener{
 		String nombre = campoNombre.getText();
 		String nombrequipo = campoNombreEquipo.getText();
 		String fecha = campoFecha.getText();
-		boolean legendario = false;
-		if (yes.isEnabled()) {
-			legendario = true;
+		boolean legendario = true;
+		if (noButton.isSelected()) {
+			legendario = false;
 			
 		}
 		String pok1 = campoPok1.getText();
