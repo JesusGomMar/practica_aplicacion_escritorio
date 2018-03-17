@@ -36,7 +36,7 @@ public class PanelListadoEquipos extends JPanel implements ActionListener{
 //			System.out.println(e.toString());
 //		}
 		tabla = new JTable (new TableModelEquipo(equipos));
-		tabla.setPreferredScrollableViewportSize(new Dimension(500, 300));
+		tabla.setPreferredScrollableViewportSize(new Dimension(700, 400));
 		tabla.setFillsViewportHeight(true);
 		// para solo poder seleccionar una fila
 		tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);

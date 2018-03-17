@@ -10,6 +10,8 @@ public class TableModelEquipo extends AbstractTableModel{
 	
 	private Object[][] datos = null;
 	
+
+	
 	public TableModelEquipo(Equipo[] equipo) {
 		// TODO Auto-generated constructor stub
 		
@@ -22,7 +24,7 @@ public class TableModelEquipo extends AbstractTableModel{
 			datos[i][0] = c.getNombre();
 			datos[i][1] = c.getNombrequipo();
 			datos[i][2] = c.getFecha();
-			datos[i][3] = ""+c.isLegendario();//rellena con legendario
+			datos[i][3] = "yes"+c.isLegendario();//rellena con legendario
 			datos[i][4] = c.getPok1();
 			datos[i][5] = c.getPok2();
 			datos[i][6] = c.getPok3();
