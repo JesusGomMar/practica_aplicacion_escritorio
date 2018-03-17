@@ -46,8 +46,10 @@ public class EquipoDAOImpl implements EquipoDAO{
 			ps.setString(2, c.getNombrequipo());
 			ps.setString(3, c.getFecha());
 			ps.setBoolean(4, c.isLegendario());
-//			ps.setString(4, c.getCp());
-//			ps.setString(5, c.getTelefono());
+			ps.setString(5, c.getPok1());
+			ps.setString(6, c.getPok2());
+			ps.setString(7, c.getPok3());
+
 			
 			ps.execute();
 			ps.close();
@@ -95,12 +97,17 @@ public class EquipoDAOImpl implements EquipoDAO{
 			while (resultado.next()) {
 				
 				Equipo c = new Equipo();
+				
 				c.setNombre(resultado.getString("nombre"));
 				c.setNombrequipo(resultado.getString("nombre_equipo"));
 				c.setFecha(resultado.getString("fecha"));
 				c.setLegendario(resultado.getBoolean("legendario"));
+				c.setPok1(resultado.getString("pok1"));
+				System.out.println(c);
+				c.setPok2(resultado.getString("pok2"));
+				c.setPok3(resultado.getString("pok3"));
 				c.setId(resultado.getInt("id"));
-//				c.setTelefono(resultado.getString("telefono"));
+
 				listEquipo.add(c);
 				
 				

@@ -6,7 +6,7 @@ import modelo.Equipo;
 
 public class TableModelEquipo extends AbstractTableModel{
 	
-	private String[] columnas = {"nombre", "nombrequipo", "fecha", "legendario"} ;
+	private String[] columnas = {"nombre", "nombrequipo", "fecha", "legendario", "pok1", "pok2", "pok3"} ;
 	
 	private Object[][] datos = null;
 	
@@ -23,6 +23,9 @@ public class TableModelEquipo extends AbstractTableModel{
 			datos[i][1] = c.getNombrequipo();
 			datos[i][2] = c.getFecha();
 			datos[i][3] = "yes"+c.isLegendario();
+			datos[i][4] = c.getPok1();
+			datos[i][5] = c.getPok2();
+			datos[i][6] = c.getPok3();
 		}
 		
 	}
