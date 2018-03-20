@@ -63,6 +63,14 @@ public class Equipo {
 	}
 
 	public boolean isLegendario() {
+		if (legendario == true) {
+			String Legendariostr = String.valueOf(legendario);
+			Legendariostr = "Yes";
+		}else {
+			String Legendariostr = String.valueOf(legendario);
+			Legendariostr = "No";
+		}
+
 		return legendario;
 	}
 

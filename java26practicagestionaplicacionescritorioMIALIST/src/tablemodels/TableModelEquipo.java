@@ -24,10 +24,15 @@ public class TableModelEquipo extends AbstractTableModel{
 			datos[i][0] = c.getNombre();
 			datos[i][1] = c.getNombrequipo();
 			datos[i][2] = c.getFecha();
-			datos[i][3] = "yes"+c.isLegendario();//rellena con legendario
+			datos[i][3] = ""+c.isLegendario();//rellena con legendario
 			datos[i][4] = c.getPok1();
 			datos[i][5] = c.getPok2();
 			datos[i][6] = c.getPok3();
+//			System.out.println(datos[i][3]);
+//			if (datos[i][3] == true) {
+//				datos[i][3] = "Yes";
+//	
+//			}
 		}
 		
 	}

@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import modelo.Equipo;
 
 public class EquipoDAOImpl implements EquipoDAO{
@@ -54,6 +56,7 @@ public class EquipoDAOImpl implements EquipoDAO{
 			ps.execute();
 			ps.close();
 			System.out.println("cliente insertado correctamente");
+			JOptionPane.showMessageDialog(null, "Equipo agregado correctamente" );
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("fallo en la sql");
